@@ -6,7 +6,7 @@ fn main(){
     let file_name: String = env::args()
         .collect::<Vec<String>>()
         .get(1)
-        .unwrap_or(&String::from("input/1.txt"))
+        .unwrap_or(&String::from("input/2019/1.txt"))
         .to_string(); 
 
     let content = fs::read_to_string(file_name)

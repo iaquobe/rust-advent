@@ -6,7 +6,7 @@ fn main(){
     let file_name: String = env::args()
         .collect::<Vec<String>>()
         .get(1)
-        .unwrap_or(&String::from("input/2.txt"))
+        .unwrap_or(&String::from("input/2019/2.txt"))
         .to_string(); 
 
     let file_content: String = fs::read_to_string(file_name)
@@ -20,7 +20,6 @@ fn main(){
 
     program[1] = 12; 
     program[2] = 2; 
-    
     println!("number at 0: {}", run_program(program.clone())); 
     for first in 0..program.len() {
         for second in 0..program.len() {
@@ -42,7 +41,6 @@ fn run_program(mut program: Vec<usize>) -> usize {
                 let source1 = program[pointer + 1]; 
                 let source2 = program[pointer + 2]; 
                 let dest = program[pointer + 3]; 
-                if dest % 4 == 0 { println!("overriding opcode: {} <- {} + {}", dest, source2, source1) }
 
                 program[dest] = program[source2] + program[source1]; 
                 pointer += 4; 
@@ -51,7 +49,6 @@ fn run_program(mut program: Vec<usize>) -> usize {
                 let source1 = program[pointer + 1]; 
                 let source2 = program[pointer + 2]; 
                 let dest = program[pointer + 3]; 
-                if dest % 4 == 0 { println!("overriding opcode: {} <- {} * {}", dest, source2, source1) }
 
                 program[dest] = program[source2] * program[source1]; 
                 pointer += 4; 

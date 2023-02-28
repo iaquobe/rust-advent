@@ -5,12 +5,15 @@ edition = "2021"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 [[bin]]
-name = "rust-advent-1"
-path = "src/rust-advent-1.rs"
+name = "rust-advent-1-2019"
+path = "src/2019/rust-advent-1.rs"
 
 [[bin]]
-name = "rust-advent-2"
-path = "src/rust-advent-2.rs"
+name = "rust-advent-2-2019"
+path = "src/2019/rust-advent-2.rs"
 
+[[bin]]
+name = "rust-advent-1-2022"
+path = "src/2022/rust-advent-1.rs"
 
 [dependencies]
