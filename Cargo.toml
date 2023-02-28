@@ -1,0 +1,16 @@
+[package]
+name = "rust-advent"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+[[bin]]
+name = "rust-advent-1"
+path = "src/rust-advent-1.rs"
+
+[[bin]]
+name = "rust-advent-2"
+path = "src/rust-advent-2.rs"
+
+
+[dependencies]
