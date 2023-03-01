@@ -13,6 +13,10 @@ name = "rust-advent-2-2019"
 path = "src/2019/rust-advent-2.rs"
 
 [[bin]]
+name = "rust-advent-4-2019"
+path = "src/2019/rust-advent-4.rs"
+
+[[bin]]
 name = "rust-advent-1-2022"
 path = "src/2022/rust-advent-1.rs"
 
