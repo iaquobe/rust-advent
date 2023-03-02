@@ -1,5 +1,6 @@
 use std::fs;
 use std::env;
+use std::io;
 
 fn main(){
     let file_name: String = env::args()
@@ -21,7 +22,7 @@ fn main(){
 }
 
 fn run_program(mut program: Vec<isize>) -> isize {
-    let mut pointer: isize = 0; 
+    let mut pointer: usize = 0; 
     loop {
         match program[pointer] % 100 {
             1 => { 
@@ -29,7 +30,7 @@ fn run_program(mut program: Vec<isize>) -> isize {
                 let source2 = program[pointer + 2]; 
                 let dest = program[pointer + 3]; 
 
-                program[dest] = program[source2] + program[source1]; 
+                program[dest as usize] = program[source2 as usize] + program[source1 as usize]; 
                 pointer += 4; 
             }
             2 => {
@@ -37,13 +38,22 @@ fn run_program(mut program: Vec<isize>) -> isize {
                 let source2 = program[pointer + 2]; 
                 let dest = program[pointer + 3]; 
 
-                program[dest] = program[source2] * program[source1]; 
+                program[dest as usize] = program[source2 as usize] + program[source1 as usize]; 
                 pointer += 4; 
             }
             3 => {
 
+                let mut buffer: String = String::new();
+                let stdin = io::stdin(); 
+                stdin.read_line(&mut buffer).unwrap(); 
+
+                let num: isize = buffer.parse().expect("expected a number"); 
+                let dest = program[pointer + 1]; 
+                program[dest as usize] = num; 
             },
             4 => {
+                let source = program[pointer + 1]; 
+                println!("{}", source); 
             },
             99 => break,
             _ => panic!("opcode invalid")

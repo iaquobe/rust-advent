@@ -14,11 +14,10 @@ impl Iterator for NumberIterator{
             let mut index = 5;
             loop {
                 self.current[index] += 1;
-                if self.current[index] < 10 {break;}
+                if self.current[index] < 10 {break Some(self.current);}
                 self.current[index] = 0;
                 index -= 1; 
-            }; 
-            Some(self.current)
+            } 
         }    
     }
 }
